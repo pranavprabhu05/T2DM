@@ -31,7 +31,7 @@ The benchmark includes **Logistic Regression, Random Forest, XGBoost, LightGBM a
 
 ## Quick verification
 
-For complete frozen-snapshot verification, start from the published tag in a new directory. The original manifest hashes documentation as well as evidence, so `verify_snapshot.py` and its portable-suite test apply to this frozen checkout, not a later documentation revision. The manifest is not regenerated for this cleanup.
+For complete frozen-snapshot verification, start from the published tag in a new directory. The original manifest hashes documentation as well as evidence, so `verify_snapshot.py` and its portable-suite test apply to this frozen checkout, not a later documentation revision. The manifest is not regenerated for this cleanup. [CI](.github/workflows/ci.yml) runs the complete frozen checks and portable suite at the pinned release commit, while a separate current-branch job validates citation metadata, links, historical report preservation and the unchanged scientific-file boundary. [Current documentation check commands](REPRODUCIBILITY.md) are separate from the frozen procedure below.
 
 ```bash
 git clone --branch v1.0.0-paper --single-branch https://github.com/pranavprabhu05/T2DM.git T2DM-paper

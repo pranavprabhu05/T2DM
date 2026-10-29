@@ -10,7 +10,19 @@ cd T2DM-paper
 git rev-parse HEAD
 ```
 
-Confirm `HEAD` is `faa5799fa01d8d7381ea43415fbec01036d1e4ff`. Its original manifest seals the documentation as well as the evidence. Later default-branch documentation intentionally differs from that manifest; `verify_snapshot.py` and the portable test that invokes it must run against the frozen release. The existing branch workflow also invokes this frozen-manifest check against its checkout, so documentation updates produce a hash mismatch there. This docs-only correction preserves the workflow, tests, manifest and checksum sidecar; it does not weaken the frozen checks. Historical preparation reports and machine-readable provenance describe their recorded preparation state; see [RELEASE_STATUS.md](publication_release/RELEASE_STATUS.md) for current identifiers and boundaries.
+Confirm `HEAD` is `faa5799fa01d8d7381ea43415fbec01036d1e4ff`. Its original manifest seals the documentation as well as the evidence. Later default-branch documentation intentionally differs from that manifest; `verify_snapshot.py` and the portable test that invokes it run against the frozen release. CI has two independent jobs: **Frozen release verification** checks out that pinned commit, confirms the original tag object/commit/tree, and runs the complete original integrity checks, portable suite and aggregate reconstructions. **Current documentation validation** checks its current branch checkout, confirms the same release identity, validates citation metadata and relative links, preserves original report bodies, and compares every protected file with the frozen Git tree. Only the explicit documentation and CI-support allowlist may differ. The original verifier, inherited tests, manifest and checksum sidecar are unchanged; nothing is resealed. Historical preparation reports and machine-readable provenance describe their recorded preparation state; see [RELEASE_STATUS.md](publication_release/RELEASE_STATUS.md) for current identifiers and boundaries.
+
+## Current-branch documentation checks
+
+Run these separately from a full-history checkout of the current branch with the published release tag fetched. They require Python 3.12 and the existing pinned YAML parser; the scientific package environment is not needed for this documentation job.
+
+```bash
+python -m pip install PyYAML==6.0.3
+python -m unittest discover -s .github/ci -p 'test_current_documentation.py' -v
+python .github/ci/verify_current_documentation.py
+```
+
+The checks reject changes to scientific source/evidence, inherited tests, manifests, provenance and manuscript reference files. They also reject missing frozen files, unexpected new files, symlinks, changed executable modes, retargeted release identities, incorrect citation identifiers and edited historical report bodies. The complete portable scientific suite remains in the separate frozen-release job; these documentation checks do not replace it. The remaining sections describe the frozen checkout selected above.
 
 ## Environment
 
