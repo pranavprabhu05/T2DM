@@ -1,6 +1,16 @@
 # Reproducing the public snapshot's supported outputs
 
-This independently initialized local snapshot is derived from research commit `12d3f9b3676d8d5638d27794bf11e01b36027310`. It contains no research Git history. Its intended public URL is https://github.com/OppositeExpert/T2DM, which still identifies the original repository until the explicitly approved transition occurs. No working public clone command for an unpublished tag is claimed.
+**Status corrected 29 October 2026.** The independently initialized public snapshot at [pranavprabhu05/T2DM](https://github.com/pranavprabhu05/T2DM) was derived from research commit `12d3f9b3676d8d5638d27794bf11e01b36027310` and contains no original research Git history. The former `OppositeExpert/T2DM` URL redirects to the canonical repository. The published [release `v1.0.0-paper`](https://github.com/pranavprabhu05/T2DM/releases/tag/v1.0.0-paper), commit `faa5799fa01d8d7381ea43415fbec01036d1e4ff`, is archived at version DOI [10.5281/zenodo.23537932](https://doi.org/10.5281/zenodo.23537932). Software/archive publication does not establish journal acceptance or publication.
+
+Run the complete verification procedure below from the frozen tag in a new directory:
+
+```bash
+git clone --branch v1.0.0-paper --single-branch https://github.com/pranavprabhu05/T2DM.git T2DM-paper
+cd T2DM-paper
+git rev-parse HEAD
+```
+
+Confirm `HEAD` is `faa5799fa01d8d7381ea43415fbec01036d1e4ff`. Its original manifest seals the documentation as well as the evidence. Later default-branch documentation intentionally differs from that manifest; `verify_snapshot.py` and the portable test that invokes it must run against the frozen release. The existing branch workflow also invokes this frozen-manifest check against its checkout, so documentation updates produce a hash mismatch there. This docs-only correction preserves the workflow, tests, manifest and checksum sidecar; it does not weaken the frozen checks. Historical preparation reports and machine-readable provenance describe their recorded preparation state; see [RELEASE_STATUS.md](publication_release/RELEASE_STATUS.md) for current identifiers and boundaries.
 
 ## Environment
 
@@ -14,7 +24,7 @@ python -m pip install --no-deps --no-build-isolation -e .
 python scripts/verify_environment.py
 ```
 
-On the test host the same interpreter version is named python3; use that executable if python3.12 is unavailable. Editable installation must point to this checkout. Do not copy the research virtual environment or install only a wheel without checkout-relative configuration. The 48-distribution lock pins versions, not wheel hashes. macOS arm64 is the tested platform; current candidate Linux, Windows and Docker behavior is not automatically established by older CI logs. Native library/runtime availability and fonts affect portability.
+On the historical test host the same interpreter version is named python3; use that executable if python3.12 is unavailable. Editable installation must point to this checkout. Do not copy the research virtual environment or install only a wheel without checkout-relative configuration. The 48-distribution lock pins versions, not wheel hashes. The preparation reports record macOS arm64 testing; the [published-commit GitHub Actions run](https://github.com/pranavprabhu05/T2DM/actions/runs/39612010229) separately records Ubuntu validation. Neither establishes Windows/Docker behavior or cross-platform timing parity. Native library/runtime availability and fonts affect portability.
 
 ## Evidence integrity and public statistical checks
 

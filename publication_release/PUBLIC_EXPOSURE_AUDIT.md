@@ -1,3 +1,5 @@
+> **Historical pre-publication report — notice added 29 October 2026.** The original preparation text below is retained verbatim. Hosting, rename, tag and DOI statements describe the preparation state and are superseded by [current RELEASE_STATUS.md](RELEASE_STATUS.md): the public software release is `v1.0.0-paper`, commit `faa5799fa01d8d7381ea43415fbec01036d1e4ff`, version DOI [10.5281/zenodo.23537932](https://doi.org/10.5281/zenodo.23537932). This notice does not establish later author consent, institutional approval or journal acceptance. The frozen tag and Zenodo archive retain the original file bytes.
+
 # Public exposure audit of the independent snapshot
 
 **21 October 2026 — no identified private payload in the reviewed candidate. Publication approval remains pending.** This report concerns the independently initialized snapshot. The original research repository was already public at discovery and remains unchanged during preparation. Its history is not approved for the new public release.

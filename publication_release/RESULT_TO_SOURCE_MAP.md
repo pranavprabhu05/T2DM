@@ -1,4 +1,6 @@
-# Current paper result-to-source map
+# Frozen paper-release result-to-source map
+
+**Hosting-status correction, 29 October 2026.** This map describes the frozen software/evidence release, not current manuscript readiness. [v1.0.0-paper](https://github.com/pranavprabhu05/T2DM/releases/tag/v1.0.0-paper), commit `faa5799fa01d8d7381ea43415fbec01036d1e4ff`, is publicly archived at version DOI [10.5281/zenodo.23537932](https://doi.org/10.5281/zenodo.23537932). The source mappings and numerical evidence below are unchanged.
 
 The recovered 16 October package has a 28-page manuscript, 52-page ESM 1 with S1–S15, and a 118-member ESM 2. It matches the requested full title and revision topics. The older S11-ending package is superseded for this map. Exact identities are in `MANUSCRIPT_SOURCE_VERIFICATION.md`; no manuscript was edited.
 
@@ -6,7 +8,7 @@ The recovered 16 October package has a 28-page manuscript, 52-page ESM 1 with S1
 
 ## Tested entry points and what they do
 
-Run from the sanitized snapshot root in the documented CPython 3.12 environment. No current public tag distributes this candidate yet. The metadata-bearing original statistical-verification CSV is excluded; its separately named PUBLIC projection removes only the private source-path column and preserves all retained cell strings. The source index/curation adapter identifies that derivative explicitly.
+Run from the published `v1.0.0-paper` snapshot root in the documented CPython 3.12 environment; follow [REPRODUCIBILITY.md](../REPRODUCIBILITY.md) to select the frozen checkout. The metadata-bearing original statistical-verification CSV is excluded; its separately named PUBLIC projection removes only the private source-path column and preserves all retained cell strings. The source index/curation adapter identifies that derivative explicitly.
 
 | Code | Executable command | Expected output / dependencies / evidence tier |
 | --- | --- | --- |
@@ -16,7 +18,7 @@ Run from the sanitized snapshot root in the documented CPython 3.12 environment.
 | F | `python publication_release/paper_evidence/REGENERATE_FIGURES.py outputs/reviewer-figures` | Three paper PNG/PDF figures from tracked aggregate plot data/forced-panel CSV; matplotlib only, no private predictions or fitting. All three PNGs reproduced byte-identically in the isolated environment |
 | C | `python publication_release/verify_cohort_counts.py --dataset pidd` (also sylhet/hospital130) | Independently recount eligible rows/events/predictors from separately downloaded, hash-verified raw data. No record-level output or fit. BRFSS requires its blocked CDC download; split membership is not reconstructed |
 
-For every item below, **saved aggregate verification is public-input-capable in this candidate** (subject to its release approval). **Complete numerical reanalysis is not independently established from public inputs**: raw records, matching historical splits/predictions/models/calibrators and bootstrap distributions are absent or nonredistributed, and the exact historical source tree is missing. The commands verify or curate frozen evidence; none reruns model fitting. Required provider sources for any future raw-data work are OpenML 37 (PIDD), UCI 529 (Sylhet), UCI 296 (Hospital130), and CDC BRFSS 2015, with exact URLs/hashes in `config/data_sources.yaml`. Download status and platform limits are recorded in `FRESH_CLONE_VERIFICATION.md`.
+For every item below, **saved aggregate verification is public-input-capable in the published release**. **Complete numerical reanalysis is not independently established from public inputs**: raw records, matching historical splits/predictions/models/calibrators and bootstrap distributions are absent or nonredistributed, and the exact historical source tree is missing. The commands verify or curate frozen evidence; none reruns model fitting. Required provider sources for any future raw-data work are OpenML 37 (PIDD), UCI 529 (Sylhet), UCI 296 (Hospital130), and CDC BRFSS 2015, with exact URLs/hashes in `config/data_sources.yaml`. Historical download status and platform limits are recorded in `FRESH_CLONE_VERIFICATION.md`; the current reproduction guide distinguishes that report from later release CI.
 
 ## Main manuscript tables
 
