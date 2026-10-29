@@ -1,10 +1,15 @@
 cff-version: 1.2.0
-message: "Local paper-release candidate: approved creator metadata and final release identifiers must be confirmed before publication."
+message: "Cite the frozen software and aggregate-evidence release using this version DOI. Collective attribution is retained; this file does not establish manuscript authorship approval, creator consent or institutional approval. See Zenodo for deposited creator metadata."
 title: "Availability-Aware and Leakage-Controlled Evaluation of Predictive Models Across Heterogeneous Feature Schemas: Case Studies in Diabetes Status and 30-Day Readmission"
 type: software
 authors:
   - name: "T2DM Project Contributors"
-repository-code: "https://github.com/OppositeExpert/T2DM"
+repository-code: "https://github.com/pranavprabhu05/T2DM"
+url: "https://github.com/pranavprabhu05/T2DM/releases/tag/v1.0.0-paper"
+version: "v1.0.0-paper"
+commit: "faa5799fa01d8d7381ea43415fbec01036d1e4ff"
+date-released: "2026-10-21"
+doi: "10.5281/zenodo.23537932"
 license: MIT
 keywords:
   - feature availability

@@ -1,3 +1,5 @@
+> **Historical pre-publication report — notice added 29 October 2026.** The original preparation text below is retained verbatim. Hosting, rename, tag and DOI statements describe the preparation state and are superseded by [current RELEASE_STATUS.md](RELEASE_STATUS.md): the public software release is `v1.0.0-paper`, commit `faa5799fa01d8d7381ea43415fbec01036d1e4ff`, version DOI [10.5281/zenodo.23537932](https://doi.org/10.5281/zenodo.23537932). This notice does not establish later author consent, institutional approval or journal acceptance. The frozen tag and Zenodo archive retain the original file bytes.
+
 # Independent clean-snapshot verification — 21 October 2026
 
 **PASS_WITH_LIMITATIONS. Local preparation only; no public release, tag or DOI.** An independently copied snapshot without `.git`, raw data, research outputs or model objects was installed in a new environment. This is a fresh-copy test of the proposed payload, not a clone of a public release that does not yet exist. CPython 3.12.0 / macOS 27.0.1 arm64; all 48 locked distributions installed successfully. The lock pins versions rather than wheel hashes. Other operating systems were not tested here.
