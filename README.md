@@ -19,6 +19,29 @@ The benchmark includes **Logistic Regression, Random Forest, XGBoost, LightGBM a
 
 **Negative switching result:** dynamic model-family switching did not demonstrate consistent Holm-corrected superiority over the robust fixed-family policy. Complete negative, mixed and nonsignificant results are retained. SHAP explains model associations, not causes.
 
+## Interactive research demo
+
+The [Streamlit demo](demo/README.md) explores synthetic examples, all 22 documented
+feature panels and genuine saved experiments for each cohort. **Live prediction
+is unavailable:** this public release excludes fitted preprocessing/model/calibration
+objects and individual predictions. The interface demonstrates panel eligibility
+and availability abstention without inventing probabilities or clinical decisions.
+
+Use a separate CPython 3.12 environment from the frozen scientific pipeline:
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r demo/requirements.lock
+python -m streamlit run demo/app.py --server.address 127.0.0.1 --browser.gatherUsageStats false
+```
+
+For the panel, `python -m demo.export_offline --output outputs/panel-demo.html`
+creates a self-contained interactive HTML backup that opens without a server or
+network. [Demo setup, tests and rehearsal instructions](demo/README.md) and the
+[repository inspection](demo/AUDIT.md) explain the evidence boundaries. The frozen
+tag, models' original scientific code, saved results and Zenodo archive are unchanged.
+
 ## Evaluations represented
 
 - **Masked-input experiments:** prespecified panels mask inputs to the original full-schema fitted models and training-derived calibration mappings; these are not independently trained smaller models.

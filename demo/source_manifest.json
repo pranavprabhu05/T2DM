@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "frozen_commit": "faa5799fa01d8d7381ea43415fbec01036d1e4ff",
+  "scope": "Demo aggregate inputs and source contracts match v1.0.0-paper byte for byte. Synthetic fixtures are separate newly authored examples. This does not verify individual predictions or reproduce model fitting.",
+  "sha256": {
+    "analysis/journal_revision/01_PER_REPEAT_SENSITIVITY.csv": "2dede9481210ef20308b26b075504a04617f0fb74f9fdbfa9df749a7b8a33e51",
+    "analysis/journal_revision/02_ROUTING_DISTRIBUTION.csv": "cada11453a30fc08a82e70d56ac0a185ade95834b54f06a050f7210a3768a601",
+    "analysis/journal_revision/03_SELECTIVE_PREDICTION.csv": "7519386a3fe0b00504f0c96474984f9aa170fba308c31a9e943102cb02c2f475",
+    "analysis/journal_revision/04_RETRAINED_PANEL_COMPARISON.csv": "b125d15e5fb63de0ac99b195ca576128e76cf2aa32e0a3151756ffeb2ee36ffb",
+    "analysis/journal_revision/05_CALIBRATION_SWITCHING_ABLATION.csv": "4a7f9489e60fe5f3eba9c3a88f11c1ecec0c724d518d7d1e0cafb696b709f8de",
+    "analysis/journal_revision/07_RUNTIME_PAIRED_COMPARISONS.csv": "d3e308e654e12a1844854da7288745779c15de8dae812a00b867a1c2be79192b",
+    "analysis/journal_revision/A4_MAIN_TEXT_TABLE.csv": "6e6f5fe0ed713bc6741ecbb3b46cc8ce58c16ce3fe2182f39a4c4f282e4f0a30",
+    "analysis/journal_revision/PANEL_DEFINITIONS.csv": "decfb265a81baaca486d775ffca02d85c8b3d6a73b99f6a45700e413ee903c9b",
+    "config/availability_scenarios.yaml": "d767b80e15ced4c3b3201077c2736f559bc93b9a48fc8907435b0d30e5ff0288",
+    "config/datasets.yaml": "eb5be0f09aeb1eaaf811a23a5a2ae5a631d9ec0670b66eaef080c4aecc2f68db",
+    "config/final_publication_protocol.yaml": "7c1c5191a1d98f70b6e6aa1081a894f41d0ecbe88b05b9ef7fcaab4f3fdd3b31",
+    "demo/fixtures.json": "2f2721cd4f1a8b650ddf10091f9e526741576c165749620dbaca500381a1c53b",
+    "results/final_publication/tables/availability_panel_degradation.csv": "cd9f5e406212da471d4a9a8cf27b957fd07f797c2aabad752ec036e520ca6098",
+    "results/final_publication/tables/calibration_selection.csv": "4d3c5640e435e8bd330d8515f4c6c99842229c76ff094b9293b4a0590e1ea3f7",
+    "results/final_publication/tables/full_panel_model_performance.csv": "437b397e17ba78e6393b8c919490148f3298e071ed7d93b17d47fc1a044d549a",
+    "results/final_publication/tables/routing_fallback_performance.csv": "e74f5c5c7e0805ab8afa1be4ef672477f8bcbede1b82879d0ed21a4652439726",
+    "results/final_publication/tables/threshold_performance.csv": "b12e0d71a6d97fc43925d379344bef1191a6b9623927178a65a924fba48882b0",
+    "src/diabetes_pipeline/calibration/calibrators.py": "99ef9958b503a91d7452db9060f13efdae28c4953bae31ffb473ac9a648ee3a6",
+    "src/diabetes_pipeline/data/loaders.py": "060e7978ceab43e01a311f6b569dc8bfab8ec97a58b1957faa9c5987a4386b63",
+    "src/diabetes_pipeline/evaluation/selective_prediction.py": "afec96e8cdc0900820be63f2577444b26dee90d1b5b9a84debf25f4f0ecf0fd7",
+    "src/diabetes_pipeline/preprocessing/builders.py": "84fec95e7d5814e146490fad860db68f604349b71e45c684d415b4d800f9b5fa",
+    "src/diabetes_pipeline/routing/evaluator.py": "65d37b7a6e7c239d1d6d3f4f68ccfe971cff24728cf3a714c9a62c07752064b9",
+    "src/diabetes_pipeline/routing/inference.py": "bdab26371395c0b1be74ec5ca6b58db75a404cf12524f9d53b9c111f2a13b729"
+  }
+}

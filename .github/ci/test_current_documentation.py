@@ -33,6 +33,16 @@ class DocumentationBoundaryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "added="):
             checks.verify_file_boundary(self.root, self.baseline, {"evidence.csv", "new.csv"})
 
+    def test_demo_exception_does_not_allow_new_artifacts_or_scientific_edits(self):
+        for path in ("demo/unreviewed.joblib", "src/diabetes_pipeline/new_inference.py",
+                     "config/new_panels.yaml", "results/new_metrics.csv"):
+            with self.subTest(path=path), self.assertRaisesRegex(ValueError, "added="):
+                checks.verify_file_boundary(self.root, self.baseline, {"evidence.csv", path})
+        self.assertTrue(all(path not in checks.MUTABLE_PATHS for path in (
+            "config/datasets.yaml", "config/availability_scenarios.yaml",
+            "src/diabetes_pipeline/routing/inference.py", "tests/test_routing.py",
+            "publication_release/PUBLIC_EVIDENCE_MANIFEST.csv")))
+
     def test_documentation_can_change(self):
         (self.root / "README.md").write_text("current release status\n")
         baseline = {**self.baseline, "README.md": ("100644", "old-doc-blob")}

@@ -31,13 +31,21 @@ HISTORICAL_DOCS = {
     )
 }
 DOCUMENTATION = ACTIVE_DOCS | HISTORICAL_DOCS | {"CITATION.cff"}
+# Additions for the aggregate-only research demo. No directory-wide exceptions:
+# inherited scientific source/tests/config/evidence remain byte/mode protected.
+DEMO_PATHS = {
+    "demo/__init__.py", "demo/app.py", "demo/core.py", "demo/export_offline.py",
+    "demo/fixtures.json", "demo/source_manifest.json", "demo/requirements.lock",
+    "demo/README.md", "demo/AUDIT.md", "demo/tests/test_demo.py",
+    ".github/workflows/demo.yml", ".streamlit/config.toml",
+}
 # Changes to evidence, inherited source/tests, manifests and manuscript material
 # are forbidden. New mutable paths require explicit review of this narrow list.
 MUTABLE_PATHS = DOCUMENTATION | {
     ".github/workflows/ci.yml",
     ".github/ci/verify_current_documentation.py",
     ".github/ci/test_current_documentation.py",
-}
+} | DEMO_PATHS
 
 
 def git(root: Path, *args: str) -> bytes:
